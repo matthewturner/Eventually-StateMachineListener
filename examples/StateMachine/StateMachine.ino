@@ -37,7 +37,7 @@ bool inProgress()
 
 void setup()
 {
-    Serial.begin(9600);
+    Serial.begin(115200);
     while (!Serial)
         ;
 
@@ -45,9 +45,9 @@ void setup()
 
     stateMachine.transition(IDLE);
 
-    stateMachine.when(IDLE, (EvtAction)idle, PENDING, STATE_FAILED, 500);
+    stateMachine.when(IDLE, (EvtAction)idle, PENDING, STATE_FAILED, 5000);
     stateMachine.when(PENDING, (EvtAction)pending, IN_PROGRESS);
-    stateMachine.when(IN_PROGRESS, (EvtAction)inProgress, IDLE, STATE_FAILED, 500);
+    stateMachine.when(IN_PROGRESS, (EvtAction)inProgress, IDLE, STATE_FAILED, 2000);
     stateMachine.whenInterrupted(IDLE, PENDING);
 
     mgr.addListener(&stateMachine);
