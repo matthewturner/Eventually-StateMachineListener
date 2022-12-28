@@ -1,11 +1,14 @@
 #include <Eventually.h>
-#include "EvtStateMachineListener.h"
+#include <EvtStateMachineListener.h>
 
 #include <Arduino.h>
 
 const byte IDLE = 0;
 const byte PENDING = 1;
 const byte IN_PROGRESS = 2;
+
+EvtManager mgr;
+EvtStateMachineListener stateMachine;
 
 void wakeUp()
 {
@@ -31,9 +34,6 @@ bool inProgress()
     digitalWrite(13, HIGH);
     return true;
 }
-
-EvtManager mgr;
-StateMachineListener stateMachine;
 
 void setup()
 {
