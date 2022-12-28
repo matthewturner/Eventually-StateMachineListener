@@ -45,9 +45,9 @@ void setup()
 
     stateMachine.transition(IDLE);
 
-    stateMachine.when(IDLE, (EvtAction)idle), PENDING, STATE_FAILED, 500);
-    stateMachine.when(PENDING, (EvtAction)pending), IN_PROGRESS);
-    stateMachine.when(IN_PROGRESS, (EvtAction)inProgress), IDLE, STATE_FAILED, 500);
+    stateMachine.when(IDLE, (EvtAction)idle, PENDING, STATE_FAILED, 500);
+    stateMachine.when(PENDING, (EvtAction)pending, IN_PROGRESS);
+    stateMachine.when(IN_PROGRESS, (EvtAction)inProgress, IDLE, STATE_FAILED, 500);
     stateMachine.whenInterrupted(IDLE, PENDING);
 
     mgr.addListener(&stateMachine);

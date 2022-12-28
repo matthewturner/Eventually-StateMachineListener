@@ -1,8 +1,35 @@
 [![PlatformIO CI](https://github.com/matthewturner/Eventually-StateMachineListener/actions/workflows/platformio.yml/badge.svg)](https://github.com/matthewturner/Eventually-StateMachineListener/actions/workflows/platformio.yml)
 
-# Eventually - Command Listener
+# Eventually - State Machine Listener
 
-Built on the [Eventually](https://github.com/johnnyb/Eventually) library, this provides a listener which can act as a state machine.
+Built on the [Eventually](https://github.com/johnnyb/Eventually) library, this provides a listener which can act as a non-blocking state machine. This works alongside any other listener you might already have in your sketch.
+
+## Usage
+
+```
+EvtManager mgr;
+StateMachineListener stateMachine;
+
+void setup()
+{
+    // register other listeners as normal
+    mgr.addListener(new EvtPinListener(...));
+
+    // set the initial state
+    stateMachine.transition(IDLE);
+
+    // define the states and transitions
+    stateMachine.when(IDLE, (EvtAction)idle, PENDING, STATE_FAILED, 500);
+    stateMachine.when(PENDING, (EvtAction)pending, IN_PROGRESS);
+    stateMachine.when(IN_PROGRESS, (EvtAction)inProgress, IDLE, STATE_FAILED, 500);
+
+    // optionally define the transition when an interrupt occurs
+    stateMachine.whenInterrupted(IDLE, PENDING);
+
+    // register the state machine with
+    mgr.addListener(&stateMachine);
+}
+```
 
 ## Installing Platform IO
 
