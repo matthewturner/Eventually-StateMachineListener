@@ -38,6 +38,8 @@ void setUp(void)
     target.when(5, (EvtAction)trigger, 6, 9, 5);
 }
 
+void tearDown(void) {}
+
 void test_does_not_trigger_when_disabled(void)
 {
     target.disable();

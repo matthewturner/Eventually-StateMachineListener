@@ -25,7 +25,7 @@ struct interruptHandler
 class EvtStateMachineListener : public EvtListener
 {
 public:
-    StateMachineListener();
+    EvtStateMachineListener();
     void setupListener();
     bool isEventTriggered();
     void when(byte targetState, EvtAction action,

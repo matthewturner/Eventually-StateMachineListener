@@ -96,7 +96,7 @@ void EvtStateMachineListener::whenInterrupted(byte guardState, byte targetState)
     _interruptHandler.targetState = targetState;
 }
 
-bool StateMachineListener::isEventTriggered()
+bool EvtStateMachineListener::isEventTriggered()
 {
     if (!EvtListener::isEventTriggered())
     {
