@@ -3,10 +3,14 @@ name: PlatformIO CI
 on: [push]
 
 jobs:
-  build:
-
+  lint:
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: arduino/arduino-lint-action@v1
 
+  build:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Cache pip
