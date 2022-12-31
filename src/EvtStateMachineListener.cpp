@@ -98,10 +98,12 @@ void EvtStateMachineListener::whenInterrupted(byte guardState, byte targetState)
 
 bool EvtStateMachineListener::isEventTriggered()
 {
+#ifdef EVT_SUPPORTS_DISABLE
     if (!EvtListener::isEventTriggered())
     {
         return false;
     }
+#endif
 
     return _state != STATE_FAILED;
 }
