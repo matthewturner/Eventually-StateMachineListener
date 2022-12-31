@@ -1,7 +1,7 @@
 {
-    "name": "Eventually - State Machine Listener",
+    "name": "EventuallyStateMachine",
     "keywords": "async, event-based, statemachine",
-    "description": "Add state machine support to Eventually",
+    "description": "Extends Eventually with a state machine",
     "repository": {
         "type": "git",
         "url": "https://github.com/matthewturner/Eventually-StateMachineListener.git"

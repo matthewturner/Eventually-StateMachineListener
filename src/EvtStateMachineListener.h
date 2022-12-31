@@ -1,7 +1,11 @@
-#pragma once
+/*
+Extends Eventually with a simple state machine
+*/
+#ifndef EVT_STATE_MACHINE_LISTENER_H
+#define EVT_STATE_MACHINE_LISTENER_H
 
 #include <Arduino.h>
-#include "EvtListener.h"
+#include <Eventually.h>
 
 const byte MAX_STATES = 10;
 const byte NO_TRANSITION = -1;
@@ -49,3 +53,5 @@ private:
     bool _actionExecuted;
     bool hasPassedTransitionDelay(uint32_t transitionDelay);
 };
+
+#endif
