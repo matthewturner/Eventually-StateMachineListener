@@ -1,5 +1,5 @@
 {
-    "name": "Eventually - State Machine Listener",
+    "name": "EventuallyStateMachine",
     "keywords": "async, event-based, statemachine",
     "description": "Extends Eventually with a state machine",
     "repository": {
