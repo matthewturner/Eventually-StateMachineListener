@@ -10,31 +10,6 @@ const byte IN_PROGRESS = 2;
 EvtManager mgr;
 EvtStateMachineListener stateMachine;
 
-void wakeUp()
-{
-    stateMachine.onInterrupt();
-}
-
-bool idle()
-{
-    Serial.println("Idling...");
-    digitalWrite(13, LOW);
-    return true;
-}
-
-bool pending()
-{
-    Serial.println("Pending...");
-    return true;
-}
-
-bool inProgress()
-{
-    Serial.println("In progress...");
-    digitalWrite(13, HIGH);
-    return true;
-}
-
 void setup()
 {
     Serial.begin(115200);
@@ -62,3 +37,28 @@ void setup()
 }
 
 USE_EVENTUALLY_LOOP(mgr)
+
+void wakeUp()
+{
+    stateMachine.onInterrupt();
+}
+
+bool idle()
+{
+    Serial.println("Idling...");
+    digitalWrite(13, LOW);
+    return true;
+}
+
+bool pending()
+{
+    Serial.println("Pending...");
+    return true;
+}
+
+bool inProgress()
+{
+    Serial.println("In progress...");
+    digitalWrite(13, HIGH);
+    return true;
+}
