@@ -43,13 +43,16 @@ void setup()
 
     pinMode(13, OUTPUT);
 
+    // set the initial state
     stateMachine.transition(IDLE);
 
+    // define states and transitions
     stateMachine.when(IDLE, (EvtAction)idle, PENDING, STATE_FAILED, 5000);
     stateMachine.when(PENDING, (EvtAction)pending, IN_PROGRESS);
     stateMachine.when(IN_PROGRESS, (EvtAction)inProgress, IDLE, STATE_FAILED, 2000);
     stateMachine.whenInterrupted(IDLE, PENDING);
 
+    // register the listener
     mgr.addListener(&stateMachine);
 
     pinMode(2, INPUT_PULLUP);
