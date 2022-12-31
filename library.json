@@ -4,7 +4,7 @@
     "description": "Extends Eventually with a state machine",
     "repository": {
         "type": "git",
-        "url": "https://github.com/matthewturner/Eventually-StateMachineListener.git"
+        "url": "https://github.com/matthewturner/EventuallyStateMachine.git"
     },
     "authors": [
         {
