@@ -1,6 +1,6 @@
 [![PlatformIO CI](https://github.com/matthewturner/Eventually-StateMachineListener/actions/workflows/platformio.yml/badge.svg)](https://github.com/matthewturner/Eventually-StateMachineListener/actions/workflows/platformio.yml)
 
-# Eventually - State Machine Listener
+# Eventually - State Machine
 
 Built on the [Eventually](https://github.com/johnnyb/Eventually) library, this provides a listener which can act as a non-blocking state machine. This works alongside any other listener you might already have in your sketch.
 
