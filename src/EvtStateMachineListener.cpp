@@ -18,7 +18,7 @@ void EvtStateMachineListener::when(byte targetState, EvtAction action,
     _stateActions[targetState] = s;
 }
 
-bool EvtStateMachineListener::performTriggerAction(EvtContext *ctx)
+bool EvtStateMachineListener::performTriggerAction(IEvtContext *ctx)
 {
     byte currentState = _state;
     StateAction s = _stateActions[currentState];
@@ -133,6 +133,6 @@ uint64_t EvtStateMachineListener::systemTime()
     return millis();
 }
 
-void EvtStateMachineListener::setupListener()
+void EvtStateMachineListener::reset()
 {
 }
