@@ -30,7 +30,7 @@ class EvtStateMachineListener : public EvtListener
 {
 public:
     EvtStateMachineListener();
-    void setupListener();
+    void reset();
     bool isEventTriggered();
     void when(byte targetState, EvtAction action,
               byte successState = NO_TRANSITION,
@@ -38,7 +38,7 @@ public:
               uint32_t transitionDelay = 0);
     void onInterrupt();
     void whenInterrupted(byte guardState, byte targetState);
-    bool performTriggerAction(EvtContext *ctx);
+    bool performTriggerAction(IEvtContext *ctx);
     void transition(byte newState);
     byte currentState();
     void setTransitionTime(uint64_t timeInMs);
