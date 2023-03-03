@@ -2,7 +2,7 @@
 
 # Eventually - State Machine
 
-Built on the [Eventually](https://github.com/johnnyb/Eventually) library, this provides a listener which can act as a non-blocking state machine. This works alongside any other listener you might already have in your sketch.
+Built on the [Eventually](https://github.com/matthewturner/Eventually) library, this provides a listener which can act as a non-blocking state machine. This works alongside any other listener you might already have in your sketch.
 
 ## Usage
 
@@ -30,6 +30,10 @@ void setup()
     mgr.addListener(&stateMachine);
 }
 ```
+
+### Ordering of listeners
+
+Currently, the state machine listener will always return true regardless of the individual state methods. Therefore, the state machine should be registered with the manager/context *last* otherwise no other listeners will fire.
 
 ## Installing Platform IO
 
