@@ -8,7 +8,7 @@ Built on the [Eventually](https://github.com/matthewturner/Eventually) library, 
 
 ```
 EvtManager mgr;
-StateMachineListener stateMachine;
+EvtStateMachineListener stateMachine;
 
 void setup()
 {
